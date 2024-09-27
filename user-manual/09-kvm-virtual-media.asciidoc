@@ -1,4 +1,17 @@
-include::_includes/attributes.asciidoc[]
+:doctype: book
+:toc: left
+:toclevels: 3
+:sectnums:
+:xrefstyle: short
+:data-uri:
+:source-highlighter: highlight.js
+:experimental:
+:icons: font
+:hide-uri-scheme:
+:nofooter:
+ifndef::imagesdir[]
+:imagesdir: {docname}
+endif::[]
 
 = rKVM and vMedia
 
