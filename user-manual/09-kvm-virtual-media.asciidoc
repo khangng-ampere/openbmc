@@ -55,6 +55,7 @@ schema. The following two operations are supported:
 
 * InsertMedia: Mount the ISO file from Samba server to the BMC and share it with the Host through virtual CD-ROM.
 +
+.this is how you do it
 ====
 [source,console]
 ----
