@@ -1,0 +1,60 @@
+include::_includes/attributes.asciidoc[]
+
+= rKVM and vMedia
+
+== rKVM
+
+The BMC supports KVM over WebUI. It is accessed using the WebUI at
+menu:Operations[KVM].
+
+.KVM
+image::kvm.png[]
+
+== vMedia
+
+=== vMedia support in WebUI
+
+The BMC supports mounting of ISO files from the local machine (local media) over the WebUI.
+
+. Login to the WebUI.
+. Select menu:Operations[Virtual media].
++
+.VirtualMedia support in WebUI
+image::iso-file.png[]
+
+. Click btn:[Add file] and select the local ISO file.
+. Click btn:[Open].
+. Click btn:[Start] to mount the ISO file.
++
+image::selected-iso.png[]
+
+NOTE: As the Virtual media connection is configured through WebUI to mount the
+local ISO file, it gets disconnected when the web session expires.
+
+
+
+
+
+=== Redfish VirtualMedia Schema
+
+The BMC supports mounting of the ISO file on Samba service over VirtualMedia
+schema. The following two operations are supported:
+
+* InsertMedia: Mount the ISO file from Samba server to the BMC and share it with the Host through virtual CD-ROM.
++
+====
+[source,console]
+----
+$ export token=`curl -k -H "Content-Type: application/json" -X POST https://${bmc}/login -d '{"username" :  "root", "password" :  "0penBmc"}' | grep token | awk '{print $2;}' | tr -d '"'`
+
+$ curl -k -H "X-Auth-Token: $token" -H "Content-Type: application/json" -X POST https://${bmc}/redfish/v1/Managers/bmc/VirtualMedia/Slot_2/Actions/VirtualMedia.InsertMedia -d '{"Image": "smb://10.38.152.22/sambashare/debian-11.5.0-arm64-netinst.iso","UserName" : "ampsw","Password" : "ampsw1234"}'
+----
+====
+
+* EjectMedia: Unmount the ISO file.
++
+====
+[source,console]
+$ curl -k -H "X-Auth-Token: $token" -H "Content-Type: application/json" -X POST https://${bmc}/redfish/v1/Managers/bmc/VirtualMedia/Slot_2/Actions/VirtualMedia.EjectMedia -d '{}'
+====
+
