@@ -436,14 +436,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
-<body class="article">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Welcome to Ampere&#174; OpenBMC Wiki</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_user_manual">1. User Manual</a></li>
+<li><a href="#_porting_guide">2. Porting Guide</a></li>
+<li><a href="#_guidelines">3. Guidelines</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_user_manual">User Manual</h2>
+<h2 id="_user_manual">1. User Manual</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -455,22 +465,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_porting_guide">Porting Guide</h2>
+<h2 id="_porting_guide">2. Porting Guide</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_guidelines">Guidelines</h2>
+<h2 id="_guidelines">3. Guidelines</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 </div>
-<div id="footer">
-<div id="footer-text">
-Last updated 2024-09-27 12:01:46 +0700
-</div>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
 </body>
 </html>
