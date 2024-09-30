@@ -1,6 +1,0 @@
-.User Manual
-[%collapsible]
-====
-. bruh
-. moment
-====
