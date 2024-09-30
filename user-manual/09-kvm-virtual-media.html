@@ -538,9 +538,7 @@ schema. The following two operations are supported:</p>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ export token=`curl -k -H "Content-Type: application/json" -X POST https://${bmc}/login -d '{"username" :  "root", "password" :  "0penBmc"}' | grep token | awk '{print $2;}' | tr -d '"'`
-
-$ curl -k -H "X-Auth-Token: $token" -H "Content-Type: application/json" -X POST https://${bmc}/redfish/v1/Managers/bmc/VirtualMedia/Slot_2/Actions/VirtualMedia.InsertMedia -d '{"Image": "smb://10.38.152.22/sambashare/debian-11.5.0-arm64-netinst.iso","UserName" : "ampsw","Password" : "ampsw1234"}'</code></pre>
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ export token=`curl -k -H "Content-Type: application/json" -X POST https://${bmc}/login -d '{"username" :  "root", "password" :  "0penBmc"}' | grep token | awk '{print $2;}' | tr -d '"'`</code></pre>
 </div>
 </div>
 </div>
